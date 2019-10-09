@@ -1,5 +1,5 @@
 
-public class Class 
+public class Character 
 {
 	private static int strength;
 	private static int intelligence;
@@ -8,7 +8,7 @@ public class Class
 	private static int charisma;
 	private static int constitution;
 	
-	public Class(int s, int i, int d, int w, int ch, int con)
+	public Character(int s, int i, int d, int w, int ch, int con)
 	{
 		setStrength(s);
 		setIntelligence(i);
@@ -25,7 +25,7 @@ public class Class
 
 	public static void setStrength(int strength) 
 	{
-		Class.strength = strength;
+		Character.strength = strength;
 	}
 
 	public static int getIntelligence()
@@ -35,7 +35,7 @@ public class Class
 
 	public static void setIntelligence(int intelligence) 
 	{
-		Class.intelligence = intelligence;
+		Character.intelligence = intelligence;
 	}
 
 	public static int getDexterity() 
@@ -45,7 +45,7 @@ public class Class
 
 	public static void setDexterity(int dexterity) 
 	{
-		Class.dexterity = dexterity;
+		Character.dexterity = dexterity;
 	}
 
 	public static int getWisdom() 
@@ -55,7 +55,7 @@ public class Class
 
 	public static void setWisdom(int wisdom) 
 	{
-		Class.wisdom = wisdom;
+		Character.wisdom = wisdom;
 	}
 
 	public static int getCharisma() 
@@ -65,7 +65,7 @@ public class Class
 
 	public static void setCharisma(int charisma) 
 	{
-		Class.charisma = charisma;
+		Character.charisma = charisma;
 	}
 
 	public static int getConstitution() 
@@ -75,6 +75,6 @@ public class Class
 
 	public static void setConstitution(int constitution) 
 	{
-		Class.constitution = constitution;
+		Character.constitution = constitution;
 	}
 }
