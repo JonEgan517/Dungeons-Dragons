@@ -15,54 +15,81 @@ public class Race
 		,(((int)(Math.random()*6)))+(((int)(Math.random()*6))+6))); //Constitution
 		
 		Scanner intInput = new Scanner(System.in); 
-		System.out.println("What Race would you like to be?\n1. Human\n2. Dwarf\n3. Elf\n4. Halfling\n5. Gnome\n6. Half-Orc");
+		System.out.println("What Race would you like to be?\n1. Human\n2. Dwarf\n3. Elf\n4. Halfling\n5. Gnome\n6. Half-Orc\n");
 		int race = intInput.nextInt();
 	
 		switch(race) //Choosing your race 
 		{
-			case 1: //human
-				System.out.println("You selected to be a human.");
-				for (Character human: stats)
+			case 1: //Human
+				
+				System.out.println("What human house are you from?");
+				int humanHouse = intInput.nextInt();
+				
+				if(humanHouse == 1) //House Vadalis
 				{
-					//race bonuses
-					human.setStrength(human.getStrength()+2);
-					human.setIntelligence(human.getIntelligence());
-					human.setDexterity(human.getDexterity());
-					human.setWisdom(human.getWisdom());
-					human.setCharisma(human.getCharisma());
-					human.setConstitution(human.getConstitution());
+					for (Character human: stats)
+					{
+						//race bonuses
+						human.setStrength(human.getStrength());
+						human.setIntelligence(human.getIntelligence());
+						human.setDexterity(human.getDexterity());
+						human.setWisdom(human.getWisdom());
+						human.setCharisma(human.getCharisma());
+						human.setConstitution(human.getConstitution());
 					
-					System.out.println("Strength: "+human.getStrength()
-					+"\nIntelligence: "+ human.getIntelligence() 
-					+"\nDexterity: "+ human.getDexterity() 
-					+"\nWisdom: "+ human.getWisdom() 
-					+"\nCharisma: "+ human.getCharisma() 
-					+"\nConstitution: "+ human.getConstitution());
+						System.out.println("Strength: "+human.getStrength()
+						+"\nIntelligence: "+ human.getIntelligence() 
+						+"\nDexterity: "+ human.getDexterity() 
+						+"\nWisdom: "+ human.getWisdom() 
+						+"\nCharisma: "+ human.getCharisma() 
+						+"\nConstitution: "+ human.getConstitution());
+					}
 				}
 				break;
 				
-			case 2: //dwarf
-				System.out.println("You selected to be a dwarf.");
-				for (Character dwarf: stats)
+			case 2: //Dwarf
+				
+				System.out.println("What kind of dwarf?\n1. Mountain Dwarf\n2. Hill Dwarf\n");
+				int typeOfDwarf = intInput.nextInt();
+				
+				if(typeOfDwarf == 1) //Mountain Dwarf
 				{
-					//race bonuses
-					dwarf.setStrength(dwarf.getStrength());
-					dwarf.setIntelligence(dwarf.getIntelligence());
-					dwarf.setDexterity(dwarf.getDexterity());
-					dwarf.setWisdom(dwarf.getWisdom());
-					dwarf.setCharisma(dwarf.getCharisma());
-					dwarf.setConstitution(dwarf.getConstitution());
+					System.out.println("You choose mountain dwarf.\n");
 					
-					System.out.println("Strength: "+dwarf.getStrength()
-					+"\nIntelligence: "+ dwarf.getIntelligence() 
-					+"\nDexterity: "+ dwarf.getDexterity() 
-					+"\nWisdom: "+ dwarf.getWisdom() 
-					+"\nCharisma: "+ dwarf.getCharisma() 
-					+"\nConstitution: "+ dwarf.getConstitution()+2);
+					for (Character mountain: stats) 
+					{
+						//race bonuses +2 Strength, +2 Constitution
+						mountain.setStrength(mountain.getStrength()+2);
+						mountain.setConstitution(mountain.getConstitution()+2);
+					
+						System.out.println("Strength: "+mountain.getStrength()
+						+"\nIntelligence: "+ mountain.getIntelligence() 
+						+"\nDexterity: "+ mountain.getDexterity() 
+						+"\nWisdom: "+ mountain.getWisdom() 
+						+"\nCharisma: "+ mountain.getCharisma() 
+						+"\nConstitution: "+ mountain.getConstitution());
+					}
+				}
+				else if(typeOfDwarf == 2) //Hill Dwarf
+				{
+					System.out.println("You choose hill dwarf.");
+					for (Character hill: stats) 
+					{
+						//race bonuses +1 Wisdom, +2 Constitution
+						hill.setWisdom(hill.getWisdom()+1);
+						hill.setConstitution(hill.getConstitution()+2);
+					
+						System.out.println("Strength: "+hill.getStrength()
+						+"\nIntelligence: "+ hill.getIntelligence() 
+						+"\nDexterity: "+ hill.getDexterity() 
+						+"\nWisdom: "+ hill.getWisdom() 
+						+"\nCharisma: "+ hill.getCharisma() 
+						+"\nConstitution: "+ hill.getConstitution());
+					}
 				}
 				break;
 				
-			case 3: //elf
+			case 3: //Elf
 				System.out.println("You selected to be a elf.");
 				for (Character elf: stats)
 				{
@@ -83,7 +110,7 @@ public class Race
 				}
 				break;
 			
-			case 4: //halfling
+			case 4: //Halfling
 				System.out.println("You selected to be a halfling.");
 				for (Character halfling: stats)
 				{
@@ -104,7 +131,7 @@ public class Race
 				}
 				break;
 				
-			case 5: //gnome
+			case 5: //Gnome
 				System.out.println("You selected to be a gnome.");
 				for (Character gnome: stats)
 				{
@@ -125,7 +152,7 @@ public class Race
 				}
 				break;
 				
-			case 6: //half-orc
+			case 6: //Half-Orc
 				System.out.println("You selected to be a half-orc.");
 				for (Character character: stats)
 				{
@@ -146,5 +173,10 @@ public class Race
 				}
 				break;
 		}
+	}
+
+	private static void Switch(int typeOfDwarf) {
+		// TODO Auto-generated method stub
+		
 	}
 }
