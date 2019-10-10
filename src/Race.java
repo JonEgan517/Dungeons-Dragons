@@ -3,19 +3,11 @@ import java.util.Scanner;
 
 public class Race 
 {
-	static ArrayList<Character> stats = new ArrayList<Character>();
-	
-	public static void pickRace()
+	public static void pickRace(ArrayList<Character> stats)
 	{
-		stats.add(new Character((((int)(Math.random()*6))+12) //Strength
-		,(((int)(Math.random()*6)))+(((int)(Math.random()*6))+6) //Intelligence
-		,(((int)(Math.random()*6)))+(((int)(Math.random()*6))+6) //Dexterity
-		,(((int)(Math.random()*6)))+(((int)(Math.random()*6))+8) //Wisdom
-		,(((int)(Math.random()*6)))+(((int)(Math.random()*6))+6) //Charisma
-		,(((int)(Math.random()*6)))+(((int)(Math.random()*6))+6))); //Constitution
-		
 		Scanner intInput = new Scanner(System.in); 
-		System.out.println("What Race would you like to be?\n1. Human\n2. Dwarf\n3. Elf\n4. Halfling\n5. Gnome\n6. Half-Orc\n");
+		
+		System.out.println("What Race would you like to play as?\n1. Human\n2. Dwarf\n3. Elf\n4. Halfling\n5. Gnome\n6. Half-Orc\n");
 		int race = intInput.nextInt();
 	
 		switch(race) //Choosing your race 
@@ -27,10 +19,41 @@ public class Race
 				
 				if(humanHouse == 1) //House of Vadalis
 				{
-					System.out.println("You choose to be a Human from the House of Vadalis.\n");
+					System.out.println("Here are your race bonuses becuase you are Human everything is +1.\n"
+					+ "You are from the House of Vadalis you gain +1 Dexterity, +1 Wisdom.\n");
+					
+					System.out.println("Also you get to choose any ability score to be increased +1."
+							+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
+					
 					for (Character vadalis: stats)
 					{
-						//race bonuses becuase you are Human everything +1, +1 Dexterity, +1 Wisdom, and any one ability score increased by 1 
+						int bonus = intInput.nextInt();
+						
+						if(bonus == 1)
+						{
+							vadalis.setStrength(vadalis.getStrength()+1);
+						}
+						else if(bonus == 2)
+						{
+							vadalis.setIntelligence(vadalis.getIntelligence()+1);
+						}
+						else if(bonus == 3)
+						{
+							vadalis.setDexterity(vadalis.getDexterity()+1);
+						}
+						else if(bonus == 4)
+						{
+							vadalis.setWisdom(vadalis.getWisdom()+1);
+						}
+						else if(bonus == 5)
+						{
+							vadalis.setCharisma(vadalis.getCharisma()+1);
+						}
+						else if(bonus == 6)
+						{
+							vadalis.setConstitution(vadalis.getConstitution()+1);
+						}
+						
 						vadalis.setStrength(vadalis.getStrength()+1);
 						vadalis.setIntelligence(vadalis.getIntelligence()+1);
 						vadalis.setDexterity(vadalis.getDexterity()+2);
@@ -43,7 +66,7 @@ public class Race
 						+"\nDexterity: "+ vadalis.getDexterity() 
 						+"\nWisdom: "+ vadalis.getWisdom() 
 						+"\nCharisma: "+ vadalis.getCharisma() 
-						+"\nConstitution: "+ vadalis.getConstitution());
+						+"\nConstitution: "+ vadalis.getConstitution() + "\n");
 					}	
 				}
 				

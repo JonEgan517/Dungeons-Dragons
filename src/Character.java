@@ -1,4 +1,3 @@
-
 public class Character 
 {
 	private static int strength;
@@ -7,8 +6,9 @@ public class Character
 	private static int wisdom;
 	private static int charisma;
 	private static int constitution;
+	private static int hitPoints;
 	
-	public Character(int s, int i, int d, int w, int ch, int con)
+	public Character(int s, int i, int d, int w, int ch, int con, int hp)
 	{
 		setStrength(s);
 		setIntelligence(i);
@@ -16,6 +16,7 @@ public class Character
 		setWisdom(w);
 		setCharisma(ch);
 		setConstitution(con);
+		setHitPoints(hp);
 	}
 
 	public static int getStrength() 
@@ -76,5 +77,13 @@ public class Character
 	public static void setConstitution(int constitution) 
 	{
 		Character.constitution = constitution;
+	}
+
+	public static int getHitPoints() {
+		return hitPoints;
+	}
+
+	public static void setHitPoints(int hitPoints) {
+		Character.hitPoints = hitPoints;
 	}
 }
