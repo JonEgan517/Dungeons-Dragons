@@ -19,11 +19,11 @@ public class Race
 				
 				if(humanHouse == 1) //House of Vadalis
 				{
-					System.out.println("Here are your race bonuses becuase you are Human everything is +1.\n"
+					System.out.println("Here are your race bonuses becuase you are a Human everything is +1.\n"
 					+ "You are from the House of Vadalis you gain +1 Dexterity, +1 Wisdom.\n");
 					
 					System.out.println("Also you get to choose any ability score to be increased +1."
-							+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
+					+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
 					
 					for (Character vadalis: stats)
 					{
@@ -72,10 +72,24 @@ public class Race
 				
 				else if(humanHouse == 2) //House of Cannith
 				{
-					System.out.println("You choose to be a Human from the House of Cannith.\n");
+					System.out.println("Here are your race bonuses becuase you are a Human everything is +1.\n"
+					+ "You are from the House of Cannith you gain +1 Dexterity, +1 Wisdom.\n");
+					
+					System.out.println("Also you get to increase either Intelligence or Dexterity +1.\n1. Intelligence\n2. Dexterity\n");
+					
 					for (Character cannith: stats)
 					{
-						//race bonuses becuase you are a Human everything +1, +1 Intelligence, +1 Dexterity, and increase either Intelligence or Dextery by 1 
+						int bonus = intInput.nextInt();
+						
+						if(bonus == 1)
+						{
+							cannith.setIntelligence(cannith.getIntelligence()+1);
+						}
+						else if(bonus == 2)
+						{
+							cannith.setDexterity(cannith.getDexterity()+1);
+						}
+						
 						cannith.setStrength(cannith.getStrength()+1);
 						cannith.setIntelligence(cannith.getIntelligence()+2);
 						cannith.setDexterity(cannith.getDexterity()+2);
@@ -88,16 +102,47 @@ public class Race
 						+"\nDexterity: "+ cannith.getDexterity() 
 						+"\nWisdom: "+ cannith.getWisdom() 
 						+"\nCharisma: "+ cannith.getCharisma() 
-						+"\nConstitution: "+ cannith.getConstitution());
+						+"\nConstitution: "+ cannith.getConstitution() + "\n");
 					}	
 				}
 				
 				else if(humanHouse == 3) //House of Orien
 				{
-					System.out.println("You choose to be a Human from the House of Orien.\n");
+					System.out.println("Here are your race bonuses becuase you are a Human everything is +1.\n"
+					+ "You are from the House of Orien you gain +2 Dexterity.\n");
+					
+					System.out.println("Also you get to choose any ability score to be increased +1."
+					+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
+					
 					for (Character orien: stats)
 					{
-						//race bonuses becuase you are a Human everything +1, +2 Dexterity, and any one ability score increase by 1
+						int bonus = intInput.nextInt();
+						
+						if(bonus == 1)
+						{
+							orien.setStrength(orien.getStrength()+1);
+						}
+						else if(bonus == 2)
+						{
+							orien.setIntelligence(orien.getIntelligence()+1);
+						}
+						else if(bonus == 3)
+						{
+							orien.setDexterity(orien.getDexterity()+1);
+						}
+						else if(bonus == 4)
+						{
+							orien.setWisdom(orien.getWisdom()+1);
+						}
+						else if(bonus == 5)
+						{
+							orien.setCharisma(orien.getCharisma()+1);
+						}
+						else if(bonus == 6)
+						{
+							orien.setConstitution(orien.getConstitution()+1);
+						}
+						
 						orien.setStrength(orien.getStrength()+1);
 						orien.setIntelligence(orien.getIntelligence()+1);
 						orien.setDexterity(orien.getDexterity()+3);
@@ -110,16 +155,47 @@ public class Race
 						+"\nDexterity: "+ orien.getDexterity() 
 						+"\nWisdom: "+ orien.getWisdom() 
 						+"\nCharisma: "+ orien.getCharisma() 
-						+"\nConstitution: "+ orien.getConstitution());
+						+"\nConstitution: "+ orien.getConstitution() + "\n");
 					}	
 				}
 				
 				else if(humanHouse == 4) //House of Deneith
 				{
-					System.out.println("You choose to be a Human from the House of Deneith.\n");
+					System.out.println("Here are your race bonuses becuase you are a Human everything is +1.\n"
+					+ "You are from the House of Deneith you gain +1 Strength and +1 Wisdom.\n");
+					
+					System.out.println("Also you get to choose any ability score to be increased +1."
+					+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
+					
 					for (Character deneith: stats)
 					{
-						//race bonuses becuase you are a Human everything +1, +1 Strength, +1 Wisdom, and any one ability score increase by 1
+						int bonus = intInput.nextInt();
+						
+						if(bonus == 1)
+						{
+							deneith.setStrength(deneith.getStrength()+1);
+						}
+						else if(bonus == 2)
+						{
+							deneith.setIntelligence(deneith.getIntelligence()+1);
+						}
+						else if(bonus == 3)
+						{
+							deneith.setDexterity(deneith.getDexterity()+1);
+						}
+						else if(bonus == 4)
+						{
+							deneith.setWisdom(deneith.getWisdom()+1);
+						}
+						else if(bonus == 5)
+						{
+							deneith.setCharisma(deneith.getCharisma()+1);
+						}
+						else if(bonus == 6)
+						{
+							deneith.setConstitution(deneith.getConstitution()+1);
+						}
+						
 						deneith.setStrength(deneith.getStrength()+2);
 						deneith.setIntelligence(deneith.getIntelligence()+1);
 						deneith.setDexterity(deneith.getDexterity()+1);
@@ -132,7 +208,7 @@ public class Race
 						+"\nDexterity: "+ deneith.getDexterity() 
 						+"\nWisdom: "+ deneith.getWisdom() 
 						+"\nCharisma: "+ deneith.getCharisma() 
-						+"\nConstitution: "+ deneith.getConstitution());
+						+"\nConstitution: "+ deneith.getConstitution() + "\n");
 					}	
 				}
 				break;
@@ -144,11 +220,10 @@ public class Race
 				
 				if(typeOfDwarf == 1) //Mountain Dwarf
 				{
-					System.out.println("You choose to be a Mountain Dwarf.\n");
+					System.out.println("Here are your race bonuses becuase you are a Dwarf +2 Constitution, and you are a Mountain Dwarf you gain +2 Strength.\n");
 					
 					for (Character mountain: stats) 
 					{
-						//race bonuses becuase you are a Dwarf +2 Constitution and +2 Strength
 						mountain.setStrength(mountain.getStrength()+2);
 						mountain.setConstitution(mountain.getConstitution()+2);
 					
@@ -157,25 +232,26 @@ public class Race
 						+"\nDexterity: "+ mountain.getDexterity() 
 						+"\nWisdom: "+ mountain.getWisdom() 
 						+"\nCharisma: "+ mountain.getCharisma() 
-						+"\nConstitution: "+ mountain.getConstitution());
+						+"\nConstitution: "+ mountain.getConstitution() + "\n");
 					}
 				}
 				else if(typeOfDwarf == 2) //Hill Dwarf
 				{
-					System.out.println("You choose to be a Hill Dwarf.\n");
+					System.out.println("Here are your race bonuses becuase you are a Dwarf +2 Constitution, and you are a Hill Dwarf you gain +1 Wisdom."
+							+ "\nYou also gain +1 hitpoint.\n");
 					
 					for (Character hill: stats) 
 					{
-						//race bonuses becuase you are a Dwarf +2 Constitution and +1 Wisdom
 						hill.setWisdom(hill.getWisdom()+1);
 						hill.setConstitution(hill.getConstitution()+2);
+						hill.setHitPoints(hill.getHitPoints()+1);
 					
 						System.out.println("Strength: "+hill.getStrength()
 						+"\nIntelligence: "+ hill.getIntelligence() 
 						+"\nDexterity: "+ hill.getDexterity() 
 						+"\nWisdom: "+ hill.getWisdom() 
 						+"\nCharisma: "+ hill.getCharisma() 
-						+"\nConstitution: "+ hill.getConstitution());
+						+"\nConstitution: "+ hill.getConstitution() + "\n");
 					}
 				}
 				break;
@@ -186,11 +262,10 @@ public class Race
 				
 				if(typeOfElf == 1) //High Elf
 				{
-					System.out.println("You choose to be a High Elf.\n");
+					System.out.println("Here are your race bonuses becuase you are a Dwarf +2 Dexterity, and you are a High Elf you gain +1 Intelligence.\n");
 					
 					for (Character highElf: stats)
 					{
-						//race bonuses becuase you are a Elf +2 Dexterity and +1 Intellgence
 						highElf.setIntelligence(highElf.getIntelligence()+1);
 						highElf.setDexterity(highElf.getDexterity()+2);
 					
@@ -199,15 +274,15 @@ public class Race
 						+"\nDexterity: "+ highElf.getDexterity() 
 						+"\nWisdom: "+ highElf.getWisdom() 
 						+"\nCharisma: "+ highElf.getCharisma() 
-						+"\nConstitution: "+ highElf.getConstitution());
+						+"\nConstitution: "+ highElf.getConstitution() + "\n");
 					}					
 				}
+				
 				else if(typeOfElf == 2) //Wood Elf
 				{
-					System.out.println("You choose to be a Wood Elf.\n");
+					System.out.println("Here are your race bonuses becuase you are a Elf +2 Dexterity, and you are a Mountain Dwarf you gain +1 Wisdom.\n");
 					for (Character woodElf: stats)
 					{
-						//race bonuses becuase you are a Elf +2 Dexterity and +1 Wisdom
 						woodElf.setDexterity(woodElf.getDexterity()+2);
 						woodElf.setWisdom(woodElf.getWisdom()+1);
 						
@@ -216,7 +291,7 @@ public class Race
 						+"\nDexterity: "+ woodElf.getDexterity() 
 						+"\nWisdom: "+ woodElf.getWisdom() 
 						+"\nCharisma: "+ woodElf.getCharisma() 
-						+"\nConstitution: "+ woodElf.getConstitution());
+						+"\nConstitution: "+ woodElf.getConstitution() + "\n");
 					}
 				}
 				break;
@@ -225,13 +300,12 @@ public class Race
 				System.out.println("What kind of halfling?\n1. Lightfoot\n2. Stout\n");
 				int typeOfHalfling = intInput.nextInt();
 				
-				if(typeOfHalfling == 1)
+				if(typeOfHalfling == 1) //Lightfoot Halfling
 				{
-					System.out.println("You choose to be a Lightfoot Halfling.\n");
+					System.out.println("Here are your race bonuses becuase you are a Halfling +2 Dexterity, and you are a Lightfoot Halfling you gain +1 Charisma.\n");
 					
-					for (Character lightfoot: stats) //Lightfoot Halfling
+					for (Character lightfoot: stats)
 					{
-						//race bonuses because you are a Halfling +2 Dexterity and +1 Charisma
 						lightfoot.setDexterity(lightfoot.getDexterity()+2);
 						lightfoot.setCharisma(lightfoot.getCharisma()+1);
 					
@@ -240,17 +314,16 @@ public class Race
 						+"\nDexterity: "+ lightfoot.getDexterity() 
 						+"\nWisdom: "+ lightfoot.getWisdom() 
 						+"\nCharisma: "+ lightfoot.getCharisma() 
-						+"\nConstitution: "+ lightfoot.getConstitution());
+						+"\nConstitution: "+ lightfoot.getConstitution() + "\n");
 					}
 				}
 				
 				else if(typeOfHalfling == 2) //Stout Halfling
 				{
-					System.out.println("You choose to be a Stout Halfling.\n");
+					System.out.println("Here are your race bonuses becuase you are a Halfling +2 Dexterity, and you are a Stout Halfling you gain +1 Constitution.\n");
 					
 					for (Character stout: stats)
 					{
-						//race bonuses because you are a Halfling +2 Dexterity and +1 Constitution
 						stout.setDexterity(stout.getDexterity()+2);
 						stout.setConstitution(stout.getConstitution()+1);
 					
@@ -259,7 +332,7 @@ public class Race
 						+"\nDexterity: "+ stout.getDexterity() 
 						+"\nWisdom: "+ stout.getWisdom() 
 						+"\nCharisma: "+ stout.getCharisma() 
-						+"\nConstitution: "+ stout.getConstitution());
+						+"\nConstitution: "+ stout.getConstitution() + "\n");
 					}
 				}
 				break;
@@ -268,13 +341,12 @@ public class Race
 				System.out.println("What kind of Gnome?\n1. Rock Gnome \n2. Forest Gnome.\n");
 				int typeOfGnome = intInput.nextInt();
 				
-				if(typeOfGnome == 1)
+				if(typeOfGnome == 1) //Rock Gnome
 				{
-					System.out.println("You choose to be a Rock Gnome.\n");
+					System.out.println("Here are your race bonuses becuase you are a Gnome +2 Intelligence, and you are a Rock Gnome you gain +1 Constitution.\n");
 					
-					for (Character rock: stats) //Rock Gnome
+					for (Character rock: stats)
 					{
-						//race bonuses becuase you are a Gnome +2 Intelligence and +1 Constitution
 						rock.setIntelligence(rock.getIntelligence()+2);
 						rock.setConstitution(rock.getConstitution()+1);
 					
@@ -283,13 +355,13 @@ public class Race
 						+"\nDexterity: "+ rock.getDexterity() 
 						+"\nWisdom: "+ rock.getWisdom() 
 						+"\nCharisma: "+ rock.getCharisma() 
-						+"\nConstitution: "+ rock.getConstitution());
+						+"\nConstitution: "+ rock.getConstitution() + "\n");
 					}
 				}
 				
 				else if(typeOfGnome == 2) //Forest Gnome
 				{
-					System.out.println("You choose to be a Forest Gnome.\n");
+					System.out.println("Here are your race bonuses becuase you are a Gnome +2 Intelligence, and you are a Forest Gnome you gain +1 Dexterity.\n");
 					
 					for (Character forest: stats)
 					{
@@ -302,18 +374,16 @@ public class Race
 						+"\nDexterity: "+ forest.getDexterity() 
 						+"\nWisdom: "+ forest.getWisdom() 
 						+"\nCharisma: "+ forest.getCharisma() 
-						+"\nConstitution: "+ forest.getConstitution());
+						+"\nConstitution: "+ forest.getConstitution() + "\n");
 					}
 				}
 				break;
 				
 			case 6: //Half-Orc
-				System.out.println("You choose to be a Half-Orc.\n");
-				int typeOfHalfOrc = intInput.nextInt();
+				System.out.println("Here are your race bonuses becuase you are a Half-Orc +2 Strength and +1 Constitution.\n");
 				
 				for (Character character: stats)
 				{
-					//race bonuses you are a Half-Orc +2 Strength and +1 Constitution
 					character.setStrength(character.getStrength()+2);
 					character.setConstitution(character.getConstitution()+1);
 					
@@ -322,7 +392,7 @@ public class Race
 					+"\nDexterity: "+ character.getDexterity() 
 					+"\nWisdom: "+ character.getWisdom() 
 					+"\nCharisma: "+ character.getCharisma() 
-					+"\nConstitution: "+ character.getConstitution());
+					+"\nConstitution: "+ character.getConstitution() + "\n");
 				}
 				break;
 		}

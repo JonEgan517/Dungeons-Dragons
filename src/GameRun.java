@@ -13,7 +13,11 @@ public class GameRun
 		,(((int)(Math.random()*20))+1)//Charisma
 		,(((int)(Math.random()*20))+1)//Constitution
 		,0)); //Hit Points
+		
+		Intro.intro(stats);
+		Modifiers.modifier(stats);
 		Race.pickRace(stats);
 		Class.pickClass(stats);
+		AllStats.allStats(stats);
 	}
 }
