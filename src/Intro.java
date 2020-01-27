@@ -1,16 +1,23 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 public class Intro 
-{
+{	
 	public static void intro(ArrayList<Character> stats) 
 	{
-		Scanner stringInput = new Scanner(System.in);
+		String name;
+		JFrame frame = new JFrame();
 		
-		System.out.println("Welcome to Dungeons and Dragons Character Generator.\n"
-				+ "Name Your Character");
-		
-		String name = stringInput.nextLine();
-		System.out.println("Hello, " + name + "\n");
+		JOptionPane.showMessageDialog(
+				frame,
+				"Welcome to Dungeons and Dragons Character Generator.");
+		name = JOptionPane.showInputDialog(
+				 "Name Your Character");
+		JOptionPane.showMessageDialog(
+				frame,
+				"Hello, " + name);
 	}
 }
