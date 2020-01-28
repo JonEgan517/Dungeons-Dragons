@@ -1,6 +1,5 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -11,13 +10,17 @@ public class Intro
 		String name;
 		JFrame frame = new JFrame();
 		
-		JOptionPane.showMessageDialog(
-				frame,
-				"Welcome to Dungeons and Dragons Character Generator.");
+		ImageIcon icon = new ImageIcon(("D&D.png"));
+		
+		JOptionPane.showMessageDialog(frame,
+				"Welcome to Dungeons & Dragons Character Generator.",
+				"Dungeons & Dragons Character Generator",
+				JOptionPane.QUESTION_MESSAGE,
+				icon);
+		
 		name = JOptionPane.showInputDialog(
 				 "Name Your Character");
-		JOptionPane.showMessageDialog(
-				frame,
+		JOptionPane.showMessageDialog(frame,
 				"Hello, " + name);
 	}
 }
