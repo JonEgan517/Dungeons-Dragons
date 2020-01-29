@@ -1,6 +1,5 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -8,13 +7,11 @@ public class Race
 {
 	public static void pickRace(ArrayList<Character> stats)
 	{
-		Scanner intInput = new Scanner(System.in);
 		int race = 0;
 		JFrame frame = new JFrame();
 		
 		Object[] raceChoice = {"Human", "Dwarf", "Elf", "Halfling", "Gnome", "Half-Orc"};
-		race = JOptionPane.showOptionDialog(
-				frame,
+		race = JOptionPane.showOptionDialog(frame,
 				"What Race would you like to play as?",
 				"Your Race",
 				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
@@ -26,48 +23,54 @@ public class Race
 				
 				int human = 0;
 				Object[] humanHouse = {"House of Vadalis", "House of Cannith", "House of Orien", "House of Deneith"};
-				human = JOptionPane.showOptionDialog(
-						frame,
+				human = JOptionPane.showOptionDialog(frame,
 						"What human house are you from?",
 						"Human House",
 						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
 						null, humanHouse, humanHouse[3]);
 				
-				if(human == 1) //House of Vadalis
+				if(human == 0) //House of Vadalis
 				{
+					ImageIcon	humanIcon = new ImageIcon(("Human.png"));
 					JOptionPane.showMessageDialog(frame,
 							"Here are your race bonuses becuase you are a Human everything is +1.\n"
-							+ "You are from the House of Vadalis you gain +1 Dexterity, +1 Wisdom.\n");
+							+ "You are from the House of Vadalis you gain +1 Dexterity, +1 Wisdom.\n",
+							"Human",
+							JOptionPane.QUESTION_MESSAGE,
+							humanIcon);
 					
-					JOptionPane.showMessageDialog(frame,
-							"Also you get to choose any ability score to be increased +1."
-							+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
+					int vadalisBonus = 0;
+					Object[] vadalisChoice = {"Strength", "Intelligence", "Dexterity", "Wisdom", "Charisma", "Constitution"};
+					vadalisBonus = JOptionPane.showOptionDialog(frame,
+							"Also you get to choose any ability score to be increased +1.",
+							"Vadalis Bonus", 
+							JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+							null, vadalisChoice, vadalisChoice[5]);
 					
 					for (Character vadalis: stats)
 					{
-						int bonus = intInput.nextInt();
 						
-						if(bonus == 1)
+						if(vadalisBonus == 0)
 						{
 							vadalis.setStrength(vadalis.getStrength()+1);
 						}
-						else if(bonus == 2)
+						else if(vadalisBonus == 1)
 						{
 							vadalis.setIntelligence(vadalis.getIntelligence()+1);
 						}
-						else if(bonus == 3)
+						else if(vadalisBonus == 2)
 						{
 							vadalis.setDexterity(vadalis.getDexterity()+1);
 						}
-						else if(bonus == 4)
+						else if(vadalisBonus == 3)
 						{
 							vadalis.setWisdom(vadalis.getWisdom()+1);
 						}
-						else if(bonus == 5)
+						else if(vadalisBonus == 4)
 						{
 							vadalis.setCharisma(vadalis.getCharisma()+1);
 						}
-						else if(bonus == 6)
+						else if(vadalisBonus == 5)
 						{
 							vadalis.setConstitution(vadalis.getConstitution()+1);
 						}
@@ -89,24 +92,31 @@ public class Race
 					}	
 				}
 				
-				else if(human == 2) //House of Cannith
+				else if(human == 1) //House of Cannith
 				{
+					ImageIcon	humanIcon = new ImageIcon(("Human.png"));
 					JOptionPane.showMessageDialog(frame,
 							"Here are your race bonuses becuase you are a Human everything is +1.\n"
-							+ "You are from the House of Cannith you gain +1 Dexterity, +1 Wisdom.\n");
+							+ "You are from the House of Cannith you gain +1 Dexterity, +1 Wisdom.\n"
+							,"Human",
+							JOptionPane.QUESTION_MESSAGE,
+							humanIcon);
 					
-					JOptionPane.showMessageDialog(frame,
-							"Also you get to increase either Intelligence or Dexterity +1.\n1. Intelligence\n2. Dexterity\n");
+					int cannithBonus = 0;
+					Object[] cannithChoice = {"Intelligence","Dexterity"};
+					cannithBonus = JOptionPane.showOptionDialog(frame,
+							"Also you get to increase either Intelligence or Dexterity.",
+							"Cannith Bonus", 
+							JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+							null, cannithChoice, cannithChoice[1]);
 					
 					for (Character cannith: stats)
-					{
-						int bonus = intInput.nextInt();
-						
-						if(bonus == 1)
+					{	
+						if(cannithBonus == 0)
 						{
 							cannith.setIntelligence(cannith.getIntelligence()+1);
 						}
-						else if(bonus == 2)
+						else if(cannithBonus == 1)
 						{
 							cannith.setDexterity(cannith.getDexterity()+1);
 						}
@@ -128,41 +138,48 @@ public class Race
 					}	
 				}
 				
-				else if(human == 3) //House of Orien
+				else if(human == 2) //House of Orien
 				{
+					ImageIcon	humanIcon = new ImageIcon(("Human.png"));
 					JOptionPane.showMessageDialog(frame,
 							"Here are your race bonuses becuase you are a Human everything is +1.\n"
-							+ "You are from the House of Orien you gain +2 Dexterity.\n");
+							+ "You are from the House of Orien you gain +2 Dexterity.\n"
+							,"Human",
+							JOptionPane.QUESTION_MESSAGE,
+							humanIcon);
 					
-					JOptionPane.showMessageDialog(frame,
-							"Also you get to choose any ability score to be increased +1."
-							+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
+					int orienBonus = 0;
+					Object[] orienChoice = {"Strength", "Intelligence", "Dexterity", "Wisdom", "Charisma", "Constitution"};
+					orienBonus = JOptionPane.showOptionDialog(frame,
+							"Also you get to choose any ability score to be increased +1.",
+							"Orien Bonus", 
+							JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+							null, orienChoice, orienChoice[5]);
 					
 					for (Character orien: stats)
 					{
-						int bonus = intInput.nextInt();
 						
-						if(bonus == 1)
+						if(orienBonus == 0)
 						{
 							orien.setStrength(orien.getStrength()+1);
 						}
-						else if(bonus == 2)
+						else if(orienBonus == 1)
 						{
 							orien.setIntelligence(orien.getIntelligence()+1);
 						}
-						else if(bonus == 3)
+						else if(orienBonus == 2)
 						{
 							orien.setDexterity(orien.getDexterity()+1);
 						}
-						else if(bonus == 4)
+						else if(orienBonus == 3)
 						{
 							orien.setWisdom(orien.getWisdom()+1);
 						}
-						else if(bonus == 5)
+						else if(orienBonus == 4)
 						{
 							orien.setCharisma(orien.getCharisma()+1);
 						}
-						else if(bonus == 6)
+						else if(orienBonus == 5)
 						{
 							orien.setConstitution(orien.getConstitution()+1);
 						}
@@ -184,41 +201,47 @@ public class Race
 					}	
 				}
 				
-				else if(human == 4) //House of Deneith
+				else if(human == 3) //House of Deneith
 				{
+					ImageIcon	humanIcon = new ImageIcon(("Human.png"));
 					JOptionPane.showMessageDialog(frame,
 							"Here are your race bonuses becuase you are a Human everything is +1.\n"
-							+ "You are from the House of Deneith you gain +1 Strength and +1 Wisdom.\n");
+							+ "You are from the House of Deneith you gain +1 Strength and +1 Wisdom.\n"
+							,"Human",
+							JOptionPane.QUESTION_MESSAGE,
+							humanIcon);
 					
-					JOptionPane.showMessageDialog(frame,
-							"Also you get to choose any ability score to be increased +1."
-							+ "\n1. Strength\n2. Intelligence \n3. Dexterity \n4. Wisdom \n5. Charisma \n6. Constitution\n");
+					int deneithBonus = 0;
+					Object[] deneithChoice = {"Strength", "Intelligence", "Dexterity", "Wisdom", "Charisma", "Constitution"};
+					deneithBonus = JOptionPane.showOptionDialog(frame,
+							"Also you get to choose any ability score to be increased +1.",
+							"Deneith Bonus", 
+							JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+							null, deneithChoice, deneithChoice[5]);
 					
 					for (Character deneith: stats)
-					{
-						int bonus = intInput.nextInt();
-						
-						if(bonus == 1)
+					{	
+						if(deneithBonus == 0)
 						{
 							deneith.setStrength(deneith.getStrength()+1);
 						}
-						else if(bonus == 2)
+						else if(deneithBonus == 1)
 						{
 							deneith.setIntelligence(deneith.getIntelligence()+1);
 						}
-						else if(bonus == 3)
+						else if(deneithBonus == 2)
 						{
 							deneith.setDexterity(deneith.getDexterity()+1);
 						}
-						else if(bonus == 4)
+						else if(deneithBonus == 3)
 						{
 							deneith.setWisdom(deneith.getWisdom()+1);
 						}
-						else if(bonus == 5)
+						else if(deneithBonus == 4)
 						{
 							deneith.setCharisma(deneith.getCharisma()+1);
 						}
-						else if(bonus == 6)
+						else if(deneithBonus == 5)
 						{
 							deneith.setConstitution(deneith.getConstitution()+1);
 						}
@@ -241,21 +264,25 @@ public class Race
 				}
 				break;
 				
-			case 2: //Dwarf
+			case 1: //Dwarf
 				
 				int dwarf = 0;
 				Object[] typeOfDwarf = {"Mountain Dwarf", "Hill Dwarf"};
-				human = JOptionPane.showOptionDialog(
+				dwarf = JOptionPane.showOptionDialog(
 						frame,
 						"What kind of dwarf?",
 						"Type of Dwarf",
 						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
 						null, typeOfDwarf, typeOfDwarf[1]);
 
-				if(dwarf == 1) //Mountain Dwarf
+				if(dwarf == 0) //Mountain Dwarf
 				{
+					ImageIcon	dwarfIcon = new ImageIcon(("Dwarf.png"));
 					JOptionPane.showMessageDialog(frame,
-							"Here are your race bonuses becuase you are a Dwarf +2 Constitution, and you are a Mountain Dwarf you gain +2 Strength.\n");
+							"Here are your race bonuses becuase you are a Dwarf +2 Constitution, and you are a Mountain Dwarf you gain +2 Strength.\n"
+							,"Dwarf",
+							JOptionPane.QUESTION_MESSAGE,
+							dwarfIcon);
 					
 					for (Character mountain: stats) 
 					{
@@ -271,11 +298,15 @@ public class Race
 								+"\nConstitution: "+ mountain.getConstitution() + "\n");
 					}
 				}
-				else if(dwarf == 2) //Hill Dwarf
+				else if(dwarf == 1) //Hill Dwarf
 				{
+					ImageIcon	dwarfIcon = new ImageIcon(("Dwarf.png"));
 					JOptionPane.showMessageDialog(frame,
 							"Here are your race bonuses becuase you are a Dwarf +2 Constitution, and you are a Hill Dwarf you gain +1 Wisdom."
-							+ "\nYou also gain +1 hitpoint.\n");
+							+ "\nYou also gain +1 hitpoint.\n"
+							,"Dwarf",
+							JOptionPane.QUESTION_MESSAGE,
+							dwarfIcon);
 					
 					for (Character hill: stats) 
 					{
@@ -294,20 +325,24 @@ public class Race
 				}
 				break;
 				
-			case 3: //Elf
+			case 2: //Elf
 				
 				int elf = 0;
 				Object[] typeOfElf = {"High Elf", "Wood Elf"};
-				human = JOptionPane.showOptionDialog(
+				elf = JOptionPane.showOptionDialog(
 						frame,
 						"What kind of elf?",
 						"Type of Elf",
 						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
 						null, typeOfElf, typeOfElf[1]);
 				
-				if(elf == 1) //High Elf
+				if(elf == 0) //High Elf
 				{
-					System.out.println("Here are your race bonuses becuase you are a Dwarf +2 Dexterity, and you are a High Elf you gain +1 Intelligence.\n");
+					ImageIcon HighElfIcon = new ImageIcon(("HighElf.jpeg"));
+					JOptionPane.showMessageDialog(frame,"Here are your race bonuses becuase you are a Elf +2 Dexterity, and you are a High Elf you gain +1 Intelligence.\n"
+							,"High Elf",
+							JOptionPane.QUESTION_MESSAGE,
+							HighElfIcon);
 					
 					for (Character highElf: stats)
 					{
@@ -324,9 +359,15 @@ public class Race
 					}					
 				}
 				
-				else if(elf == 2) //Wood Elf
+				else if(elf == 1) //Wood Elf
 				{
-					System.out.println("Here are your race bonuses becuase you are a Elf +2 Dexterity, and you are a Mountain Dwarf you gain +1 Wisdom.\n");
+					ImageIcon WoodElfIcon = new ImageIcon(("WoodElf.png"));
+					JOptionPane.showMessageDialog(frame,
+							"Here are your race bonuses becuase you are a Elf +2 Dexterity, and you are a Wood Elf you gain +1 Wisdom.\n"
+							,"Wood Elf",
+							JOptionPane.QUESTION_MESSAGE,
+							WoodElfIcon);
+					
 					for (Character woodElf: stats)
 					{
 						woodElf.setDexterity(woodElf.getDexterity()+2);
@@ -343,21 +384,25 @@ public class Race
 				}
 				break;
 			
-			case 4: //Halfling
+			case 3: //Halfling
 				
 				int halfling = 0;
 				Object[] typeOfHalfling = {"Lighfoot", "Stout"};
-				human = JOptionPane.showOptionDialog(
+				halfling = JOptionPane.showOptionDialog(
 						frame,
 						"What kind of Halfling?",
 						"Type of Elf",
 						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
 						null, typeOfHalfling, typeOfHalfling[1]);
 				
-				if(halfling == 1) //Lightfoot Halfling
+				if(halfling == 0) //Lightfoot Halfling
 				{
+					ImageIcon HalflingIcon = new ImageIcon(("Halfling.jpg"));
 					JOptionPane.showMessageDialog(frame,
-							"Here are your race bonuses becuase you are a Halfling +2 Dexterity, and you are a Lightfoot Halfling you gain +1 Charisma.\n");
+							"Here are your race bonuses becuase you are a Halfling +2 Dexterity, and you are a Lightfoot Halfling you gain +1 Charisma.\n"
+							,"Halfling",
+							JOptionPane.QUESTION_MESSAGE,
+							HalflingIcon);
 					
 					for (Character lightfoot: stats)
 					{
@@ -374,10 +419,14 @@ public class Race
 					}
 				}
 				
-				else if(halfling == 2) //Stout Halfling
+				else if(halfling == 1) //Stout Halfling
 				{
+					ImageIcon HalflingIcon = new ImageIcon(("Halfling.jpg"));
 					JOptionPane.showMessageDialog(frame,
-							"Here are your race bonuses becuase you are a Halfling +2 Dexterity, and you are a Stout Halfling you gain +1 Constitution.\n");
+							"Here are your race bonuses becuase you are a Halfling +2 Dexterity, and you are a Stout Halfling you gain +1 Constitution.\n"
+							,"Halfling",
+							JOptionPane.QUESTION_MESSAGE,
+							HalflingIcon);
 					
 					for (Character stout: stats)
 					{
@@ -395,23 +444,25 @@ public class Race
 				}
 				break;
 				
-			case 5: //Gnome
+			case 4: //Gnome
 				
 				int gnome = 0;
 				Object[] typeOfGnome = {"Rock Gnome", "Forest Gnome"};
-				human = JOptionPane.showOptionDialog(
+				gnome = JOptionPane.showOptionDialog(
 						frame,
 						"What kind of Gnome?",
 						"Type of Gnome",
 						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
 						null, typeOfGnome, typeOfGnome[1]);
 				
-				System.out.println("What kind of Gnome?\n1. Rock Gnome \n2. Forest Gnome.\n");
-				
-				if(gnome == 1) //Rock Gnome
+				if(gnome == 0) //Rock Gnome
 				{
+					ImageIcon GnomeIcon = new ImageIcon(("Gnome.png"));
 					JOptionPane.showMessageDialog(frame,
-							"Here are your race bonuses becuase you are a Gnome +2 Intelligence, and you are a Rock Gnome you gain +1 Constitution.\n");
+							"Here are your race bonuses becuase you are a Gnome +2 Intelligence, and you are a Rock Gnome you gain +1 Constitution.\n"
+							,"Gnome",
+							JOptionPane.QUESTION_MESSAGE,
+							GnomeIcon);
 					
 					for (Character rock: stats)
 					{
@@ -428,10 +479,14 @@ public class Race
 					}
 				}
 				
-				else if(gnome == 2) //Forest Gnome
+				else if(gnome == 1) //Forest Gnome
 				{
+					ImageIcon GnomeIcon = new ImageIcon(("Gnome.png"));
 					JOptionPane.showMessageDialog(frame,
-							"Here are your race bonuses becuase you are a Gnome +2 Intelligence, and you are a Forest Gnome you gain +1 Dexterity.\n");
+							"Here are your race bonuses becuase you are a Gnome +2 Intelligence, and you are a Forest Gnome you gain +1 Dexterity.\n"
+							,"Gnome",
+							JOptionPane.QUESTION_MESSAGE,
+							GnomeIcon);
 					
 					for (Character forest: stats)
 					{
@@ -450,9 +505,14 @@ public class Race
 				}
 				break;
 				
-			case 6: //Half-Orc
+			case 5: //Half-Orc
+				
+				ImageIcon HalfOrcIcon = new ImageIcon(("Half-orc.jpg"));
 				JOptionPane.showMessageDialog(frame,
-						"Here are your race bonuses becuase you are a Half-Orc +2 Strength and +1 Constitution.\n");
+						"Here are your race bonuses becuase you are a Half-Orc +2 Strength and +1 Constitution.\n"
+						,"Half-Orc",
+						JOptionPane.QUESTION_MESSAGE,
+						HalfOrcIcon);
 				
 				for (Character character: stats)
 				{

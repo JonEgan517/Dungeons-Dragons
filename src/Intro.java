@@ -10,13 +10,12 @@ public class Intro
 		String name;
 		JFrame frame = new JFrame();
 		
-		ImageIcon icon = new ImageIcon(("D&D.png"));
-		
+		ImageIcon titalIcon = new ImageIcon(("D&D.png"));
 		JOptionPane.showMessageDialog(frame,
 				"Welcome to Dungeons & Dragons Character Generator.",
 				"Dungeons & Dragons Character Generator",
 				JOptionPane.QUESTION_MESSAGE,
-				icon);
+				titalIcon);
 		
 		name = JOptionPane.showInputDialog(
 				 "Name Your Character");

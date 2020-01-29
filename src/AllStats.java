@@ -1,13 +1,18 @@
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 public class AllStats 
 {
 	public static void allStats(ArrayList<Character> stats)
 	{
-		System.out.println("Here are all of your stats: ");
+		JFrame frame = new JFrame();
+
 		for(Character abilities: stats)
 		{
-			System.out.println("Strength: "+abilities.getStrength()
+			JOptionPane.showMessageDialog(frame,
+			"Strength: "+abilities.getStrength()
 			+"\nIntelligence: "+ abilities.getIntelligence() 
 			+"\nDexterity: "+ abilities.getDexterity() 
 			+"\nWisdom: "+ abilities.getWisdom() 
